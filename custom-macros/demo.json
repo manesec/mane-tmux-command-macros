@@ -27,10 +27,6 @@
     {"send-key":"Enter"},
     {"sleep":"1"},
 
-    {"send-string":"Now, Let me open for you :)"},
-    {"send-key":"Enter"},
-    {"sleep":"2"},
-
     {"send-key":"Escape"},
     {"sleep":"1"},
 
@@ -39,15 +35,28 @@
     {"send-key":"Enter"},
     {"sleep":"1"},
 
-    {"send-string":"I will sleep 10 seconds"},
+
+    {"send-string":"## Let me show my source code: "},
+    {"sleep":"2"},
+
     {"send-key":"C-c"},
+    
+
+    {"send-string":"less ~/.tmux/plugins/tmux-command-macros/custom-macros/demo.json"},
+    {"send-key":"Enter"},
     {"sleep":"1"},
 
-    {"send-string":"firefox https://github.com/manesec/tmux-command-macros 2>/dev/null"},
-    {"send-key":"Enter"},
-    {"sleep":"10"},
-    {"send-key":"C-c"},
+    {"send-key":"d"},
     {"sleep":"1"},
+    {"send-key":"d"},
+    {"sleep":"1"},
+    {"send-key":"d"},
+    {"sleep":"1"},
+    {"send-key":"d"},
+    {"sleep":"1"},
+
+    {"send-key":"q"},
+    {"sleep":"2"},
 
     {"send-string":"I can also read a command output like:"},
     {"send-key":"C-c"},

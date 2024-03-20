@@ -50,8 +50,8 @@ tmux_macros_run_command(){
 
 sh_loader(){
 
-    echo "     ##      Mane Tmux Command Macros V0.1      ##"
-    echo "    https://github.com/manesec/mane-tmux-command-macros"
+    echo "     ##      Tmux Command Macros V0.1      ##"
+    echo "    https://github.com/manesec/tmux-command-macros"
     echo "-----------------------------------------------------------"
     
     PANE=$1
