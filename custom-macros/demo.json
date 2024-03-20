@@ -1,0 +1,109 @@
+[
+    {"require":"maneSay"},
+    {"send-string":"vi"},
+    {"send-key":"Enter"},
+    {"sleep":"1"},
+
+    {"send-key":"i"},
+    {"sleep":"1"},
+    
+    {"send-string":"   --- Hi, I am a tmux-command-macros  ---"},
+    {"send-key":"Enter"},
+    {"sleep":"1"},
+
+    {"send-string":"I am a tmux plugin"},
+    {"send-key":"Enter"},
+    {"sleep":"1"},
+
+    {"send-string":"The original idea was to integrate some of the more useful tools for my tmux functionality, hence the name tmux-command-macros."},
+    {"send-key":"Enter"},
+    {"sleep":"2"},
+
+    {"send-string":"Since I have to do repetitive commands all the time, which bores me to death, I was looking for a macros on tmux. But, Unfortunately, there were no good plugins to be found, so I decided to make my own."},
+    {"send-key":"Enter"},
+    {"sleep":"2"},
+
+    {"send-string":"You can download in https://github.com/manesec/tmux-command-macros"},
+    {"send-key":"Enter"},
+    {"sleep":"1"},
+
+    {"send-string":"Now, Let me open for you :)"},
+    {"send-key":"Enter"},
+    {"sleep":"2"},
+
+    {"send-key":"Escape"},
+    {"sleep":"1"},
+
+    {"send-key":":"},
+    {"send-string":"q!"},
+    {"send-key":"Enter"},
+    {"sleep":"1"},
+
+    {"send-string":"I will sleep 10 seconds"},
+    {"send-key":"C-c"},
+    {"sleep":"1"},
+
+    {"send-string":"firefox https://github.com/manesec/tmux-command-macros 2>/dev/null"},
+    {"send-key":"Enter"},
+    {"sleep":"10"},
+    {"send-key":"C-c"},
+    {"sleep":"1"},
+
+    {"send-string":"I can also read a command output like:"},
+    {"send-key":"C-c"},
+    {"sleep":"2"},
+
+    {"send-string":"vi"},
+    {"send-key":"Enter"},
+    {"sleep":"2"},
+
+    {"send-key":"i"},
+    {"sleep":"1"},
+
+    {"send-string":"Now is a : "},
+    {"send-from-cmd":"date"},
+    {"send-key":"Enter"},
+    {"sleep":"1"},
+
+    {"send-string":"Now is a : "},
+    {"send-from-cmd":"date"},
+    {"send-key":"Enter"},
+    {"sleep":"1"},
+
+    {"send-string":"Now is a : "},
+    {"send-from-cmd":"date"},
+    {"send-key":"Enter"},
+    {"sleep":"1"},
+    {"send-key":"Enter"},
+    {"send-key":"Enter"},
+    {"send-key":"Enter"},
+
+    {"send-string":"and ... Finally, Mane say: "},
+    {"send-key":"Enter"},
+    {"sleep":"1"},
+
+
+    {"send-from-cmd":"cowsay $maneSay"},
+    {"sleep":"3"},
+
+    {"send-key":"Escape"},
+    {"sleep":"1"},
+
+    {"send-key":":"},
+    {"send-string":"q!"},
+    {"send-key":"Enter"},
+    {"sleep":"1"},
+
+    {"send-string":"python3"},
+    {"send-key":"Enter"},
+    {"sleep":"1"},
+
+    {"send-string":"for i in range(3):"},
+    {"send-key":"Enter"},
+    {"send-string":"    print('bye bye !')"},
+    {"send-key":"Enter"},
+    {"send-key":"Enter"},
+    {"sleep":"2"},
+
+    {"send-key":"C-d"}
+]

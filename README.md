@@ -1,48 +1,154 @@
-## Note That
+# tmux-command-macros
 
-Fork on https://github.com/Neo-Oli/tmux-text-macros/tree/master, Still Coding ...
+The original code base on [tmux-text-macros](https://github.com/Neo-Oli/tmux-text-macros/tree/master), and [@manesec](https://github.com/manesec) made a lot of changes.
 
+The original idea was to integrate some of the more useful tools for my tmux functionality, hence the name `tmux-command-macros`.
 
-tmux-text-macros is a tmux plugin. It let's you define a bunch of strings, from which you can choose by pressing `Prefix + e`.
+Since I have to do repetitive commands all the time, which bores me to death, I was looking for a macros on tmux. 
+But, Unfortunately, there were no good plugins to be found, so I decided to make my own. 
 
-By default it contains all the emojis and a few emoticons
+`tmux-command-macros` is a tmux plugin. It let's you define a bunch of macros, from which you can choose by pressing `Prefix + /`.
 
-![Demo](https://raw.githubusercontent.com/Neo-Oli/tmux-text-macros/master/demo.gif)
+By default it contains a demo script.
+
+**Note:** Current are not support to recording the macros.
+
 
 ## Requirements
 
-* [fzf](https://github.com/junegunn/fzf)
-* [fzf-tmux](https://github.com/junegunn/fzf#fzf-tmux-script)
+* `fzf`
+* `jq`
 
 ## Installation
 
 1. clone repository to `~/.tmux/plugins/`
-2. add `run-shell ~/.tmux/plugins/tmux-text-macros/tmux-text-macros.tmux` to your `~/.tmux.conf`
+2. add `run-shell ~/.tmux/plugins/tmux-command-macro/tmux-command-macro` to your `~/.tmux.conf`
 3. run `tmux source ~/.tmux.conf` to enable the changes
+
+```bash
+# step 1
+sudo apt install -y fzf jq
+git clone https://github.com/manesec/tmux-command-macros.git ~/.tmux/plugins/tmux-command-macro
+
+# step 2 
+# manually add `run-shell ~/.tmux/plugins/tmux-command-macro/tmux-command-macro` in your tmux.
+
+# step 3
+tmux source ~/.tmux.conf
+```
 
 ## Configuration
 
-You can add your own custom macros to `~/.tmux/custom-macros`. You can use the `custom-macros` file as a template.
+You can add your own custom macros to `~/.tmux/plugins/tmux-command-macros/custom-macros`. 
 
-If you want to disable all the default macros put `set -g @ttm-load-default-macros off` before loading the plugin in your `.tmux.conf`
+Example on tmux config: 
 
-### Options
+```bash
+$ cat ~/.tmux.conf
 
-#### @ttm-load-default-macros (default: "on")
+# setup tmux-text-macros                
+set -g @tcm-window-mode vertical
+run-shell ~/.tmux/plugins/tmux-command-macros/tmux-command-macros.tmux
+```
 
-Disable all the default macros. Use this if you want to hide all emojis and just use your custom macros
+## Limitations
 
-#### @ttm-window-mode (default: "horizontal")
++ Not support to recording the macros.
++ Not able interactive the tmux.
+
+## Options in tmux config
+
+#### @tcm-marod-dir (default: "$HOME/.tmux/plugins/tmux-command-macros/custom-macros")
+
+Tell where is macron location.
+
+#### @tcm-window-mode (default: "vertical")
 
 How to split the tmux window
 * `horizontal`
 * `vertical`
 * `full` -> new window
 
-#### @ttm-keybind (default: "e")
+#### @tcm-keybind (default: "/")
 
 Setting the keybind for tmux-text-macros to execute.
 
+## Macros
+
+A Example Macros: 
+
+```bash
+[
+    {"require":"mane"},
+    {"send-string":"hi, you are input some text: "},
+    {"send-from-cmd":"echo $mane"},
+    {"sleep":"1"},
+    {"send-key":"C-c"},
+
+    {"debug":"Hi, I am only show on your runner session"},
+
+    {"send-string":"hi, test b64 working: "},
+    {"send-from-cmd-b64":"ZWNobyAkbWFuZQo="},
+    {"sleep":"1"},
+    {"send-key":"C-c"},
+
+    {"send-string":"I am kill your firefox"},
+    {"run-command":"pkill firefox"},
+    {"sleep":"1"},
+    {"send-key":"C-c"},
+
+    {"sleep":"30"}
+]
+```
+
+As you can see, each one line is an action, you can define the actions you want.
+
+Whenever you execute a Macros, a tmux session is automatically created.
+
+### Macros Action
+
+#### debug 
+
+Just show in the runner-session message.
+
+#### require
+
+Require Variables from user input and save it to the environment variable.
+
+For example: `{"require":"mane"}` and `{"send-from-cmd":"echo $mane"}`.
+
+#### sleep
+
+sleep for 5 seconds.
+
+#### send-key
+
+send a raw key, `C-c` for `Ctrl + c`, `Enter` for `Enter key`.
+
+> When specifying keys, most represent themselves (for example ‘A’ to ‘Z’). Ctrl keys may be prefixed with ‘C-’ or ‘^’, and Alt (meta) with ‘M-’. In addition, the following special key names are accepted: Up, Down, Left, Right, BSpace, BTab, DC (Delete), End, Enter, Escape, F1 to F20, Home, IC (Insert), NPage/PageDown/PgDn, PPage/PageUp/PgUp, Space, and Tab.
+
+Reference:  [tmux's manual KEY BINDINGS](https://man.openbsd.org/OpenBSD-current/man1/tmux.1#KEY_BINDINGS)
+
+#### send-string
+
+Just send a string.
+
+#### send-from-cmd
+
+run command and sent it to tmux panel.
+
+#### send-from-cmd-b64
+
+run command for base64 format and sent it to tmux panel.
+
+#### run-command
+
+run command, but DO NOT sent it to tmux panel.
+
+#### run-command-b64
+
+run command for base64 format, but DO NOT sent it to tmux panel.
+
 ## Usage
 
-Press `Prefix e` (normally `Ctrl+b e`) and choose a string by choosing it with the arrow keys or by entering a search string and press enter.
+Press `Prefix /` (normally `Ctrl+b /`) and choose a string by choosing it with the arrow keys or by entering a search string and press enter.

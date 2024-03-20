@@ -1,0 +1,21 @@
+[
+    {"require":"mane"},
+    {"send-string":"hi, you are input some text: "},
+    {"send-from-cmd":"echo $mane"},
+    {"sleep":"1"},
+    {"send-key":"C-c"},
+
+
+    {"send-string":"hi, test b64 working: "},
+    {"send-from-cmd-b64":"ZWNobyAkbWFuZQo="},
+    {"sleep":"1"},
+    {"send-key":"C-c"},
+
+    {"send-string":"I am kill your firefox"},
+    {"run-command":"pkill firefox"},
+    {"sleep":"1"},
+    {"send-key":"C-c"},
+
+    {"sleep":"30"}
+
+]
