@@ -23,14 +23,17 @@ By default it contains a demo script.
 
 ## Installation
 
-1. clone repository to `~/.tmux/plugins/`
-2. add `run-shell ~/.tmux/plugins/tmux-command-macro/tmux-command-macro` to your `~/.tmux.conf`
+1. clone repository to `~/.tmux/plugins/`, change premission
+2. add `run-shell ~/.tmux/plugins/tmux-command-macros/tmux-command-macros` to your `~/.tmux.conf`
 3. run `tmux source ~/.tmux.conf` to enable the changes
 
 ```bash
 # step 1
 sudo apt install -y fzf jq
-git clone https://github.com/manesec/tmux-command-macros.git ~/.tmux/plugins/tmux-command-macro
+git clone https://github.com/manesec/tmux-command-macros.git ~/.tmux/plugins/tmux-command-macros
+
+chmod +x ~/.tmux/plugins/tmux-command-macros/tmux-command-macros.tmux
+chmod +x ~/.tmux/plugins/tmux-command-macros/tmux-command-runner.sh
 
 # step 2 
 # manually add `run-shell ~/.tmux/plugins/tmux-command-macro/tmux-command-macro` in your tmux.
