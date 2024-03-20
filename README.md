@@ -4,6 +4,8 @@ The original code base on [tmux-text-macros](https://github.com/Neo-Oli/tmux-tex
 
 The original idea was to integrate some of the more useful tools for my tmux functionality, hence the name `tmux-command-macros`.
 
+> 既然找不到想要的工具，那也只能自己写了。 QAQ
+
 Since I have to do repetitive commands all the time, which bores me to death, I was looking for a macros on tmux. 
 But, Unfortunately, there were no good plugins to be found, so I decided to make my own. 
 
@@ -16,6 +18,8 @@ By default it contains a demo script.
 ![Demo](https://raw.githubusercontent.com/manesec/tmux-command-macros/master/demo1.gif)
 
 *Imagine you're a hacker.*
+
+**Note:** We don't provide any scripts, if interested just look at my [other project](https://github.com/manesec/mane-tmux-macros).
 
 **Note:** Current are not support to recording the macros.
 
