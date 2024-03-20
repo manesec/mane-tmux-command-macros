@@ -13,8 +13,11 @@ But, Unfortunately, there were no good plugins to be found, so I decided to make
 
 By default it contains a demo script.
 
-**Note:** Current are not support to recording the macros.
+![Demo](https://raw.githubusercontent.com/manesec/tmux-command-macros/master/demo1.gif)
 
+*Imagine you're a hacker.*
+
+**Note:** Current are not support to recording the macros.
 
 ## Requirements
 
