@@ -9,6 +9,8 @@ But, Unfortunately, there were no good plugins to be found, so I decided to make
 
 `tmux-command-macros` is a tmux plugin. It let's you define a bunch of macros, from which you can choose by pressing `Prefix + /`.
 
+![Demo](https://raw.githubusercontent.com/manesec/tmux-command-macros/master/demo.gif)
+
 By default it contains a demo script.
 
 **Note:** Current are not support to recording the macros.
