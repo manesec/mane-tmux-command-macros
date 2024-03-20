@@ -48,8 +48,14 @@ tmux_macros() {
                 export $export_var=""
                 read -p "Enter $export_var: " $export_var
             fi
+            if [ $read_funs = "require-from-cmd" ]; then
+                eval $(echo $read_value | base64 -d)
+            fi
+            if [ $read_funs = "require-from-cmd-b64" ]; then
+                eval $( echo "$(echo $read_value | base64 -d)" | base64 -d)
+            fi
         done;
-       
+        
         # save env and prepear to run
         selected=$(echo "$maros_dir/$selected" | base64 -w 0)
 

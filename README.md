@@ -85,6 +85,8 @@ A Example Macros:
 ```bash
 [
     {"require":"mane"},
+    {"require-from-cmd":"cd /Tools; export MANE=$(fzf)"},
+
     {"send-string":"hi, you are input some text: "},
     {"send-from-cmd":"echo $mane"},
     {"sleep":"1"},
@@ -121,6 +123,16 @@ Just show in the runner-session message.
 Require Variables from user input and save it to the environment variable.
 
 For example: `{"require":"mane"}` and `{"send-from-cmd":"echo $mane"}`.
+
+#### require-from-cmd
+
+Pre-Run command.
+
+It is very useful when in the user ui.
+
+#### require-from-cmd-b64
+
+Pre-Run command for b64.
 
 #### sleep
 
