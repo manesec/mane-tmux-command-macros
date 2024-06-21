@@ -157,6 +157,10 @@ Reference:  [tmux's manual KEY BINDINGS](https://man.openbsd.org/OpenBSD-current
 
 Just send a string.
 
+#### send-string-b64
+
+Just send a string and base64 decode.
+
 #### send-from-cmd
 
 run command and sent it to tmux panel.

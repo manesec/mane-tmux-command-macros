@@ -25,6 +25,11 @@ tmux_macros_run_command(){
             echo "[send-string] $read_value"
             tmux send-keys -t "$PANE" -l "" "$read_value"
             ;;  
+        send-string-b64 )
+            echo "[send-string-b64] $read_value"
+            cmd_value=$(echo "$read_value" | base64 -d)
+            tmux send-keys -t "$PANE" -l "" "$cmd_value"
+            ;;
         run-command ) 
             echo "[run-command] $read_value"
             cmd_value=$(eval $read_value)
